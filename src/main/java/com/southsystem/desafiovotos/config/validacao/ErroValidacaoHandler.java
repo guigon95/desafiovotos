@@ -54,7 +54,7 @@ public class ErroValidacaoHandler {
 
 		ErroDTO dto;
 
-		dto = new ErroDTO(LocalDateTime.now(), exception.getMessage());
+		dto = new ErroDTO(LocalDateTime.now(), exception.getLocalizedMessage());
 
 		return dto;
 	}
