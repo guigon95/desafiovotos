@@ -4,6 +4,8 @@ Informações
 
 Para realizar operações na API acesse https://desafio-votos.herokuapp.com/
 
+Recomendo a utlização de um API Client (Ex: Postman) para realização dos testes
+
 - A documentacão da API realizada com o Swagger. URL: https://desafio-votos.herokuapp.com/swagger-ui.html
 - O armazenamento dos dados foi realizado utilizando o banco Postgres que está rodando em RDS na AWS.
 - A integração com o sistema foi feita através do OpenFeing do Spring Cloud.
