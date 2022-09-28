@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping(value = "/pauta/v1")
+@RequestMapping(value = "/v1/pauta/")
 public class PautaController {
 
 	@Autowired
