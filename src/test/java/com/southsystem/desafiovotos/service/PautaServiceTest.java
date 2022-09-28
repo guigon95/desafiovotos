@@ -11,6 +11,7 @@ import static org.mockito.Mockito.when;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -74,7 +75,7 @@ public class PautaServiceTest {
 		Page<PautaDTO> page = pautaService.pesquisarPautas(pautaForm, 10, 10);
 
 		Pauta pauta = listaPautas.get(0);
-		PautaDTO pautaDTO = page.get().toList().get(0);
+		PautaDTO pautaDTO = page.get().collect(Collectors.toList()).get(0);
 
 		Assertions.assertEquals(pauta.getDescricao(), pautaDTO.getDescricao());
 	}

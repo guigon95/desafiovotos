@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -94,7 +95,7 @@ public class SessaoServiceTest {
 		Page<SessaoDetalhadaDTO> page = sessaoService.pesquisarSessoes(sessaoFiltro, 10, 10);
 
 		Sessao sessao = listaSessoes.get(0);
-		SessaoDetalhadaDTO sessaoDTO = page.get().toList().get(0);
+		SessaoDetalhadaDTO sessaoDTO = page.get().collect(Collectors.toList()).get(0);
 
 		Assertions.assertEquals(sessao.getDataHoraInicio().toString(), sessaoDTO.getDataHoraInicio());
 		Assertions.assertEquals(sessao.getDataHoraFim().toString(), sessaoDTO.getDataHoraFim());
