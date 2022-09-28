@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping(value = "/voto/v1")
+@RequestMapping(value = "/v1/voto")
 public class VotoController {
 
 	@Autowired
