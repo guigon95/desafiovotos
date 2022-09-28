@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping(value = "/sessao/v1")
+@RequestMapping(value = "/v1/sessao")
 public class SessaoController {
 
 	@Autowired
