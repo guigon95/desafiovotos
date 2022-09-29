@@ -36,7 +36,7 @@ public class VotoControllerTest {
 		votoForm.setVoto("SIM");
 		
 		this.mockMvc
-				.perform(post("/voto/v1").contentType(MediaType.APPLICATION_JSON)
+				.perform(post("/v1/voto").contentType(MediaType.APPLICATION_JSON)
 						.content(objectMapper.writeValueAsString(votoForm)))
 				.andExpect(status().isCreated());	
 	}
