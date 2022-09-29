@@ -54,7 +54,7 @@ public class PautaControllerTest {
 		when(pautaService.salvar(any(Pauta.class))).thenReturn(pauta);
 
 		this.mockMvc
-				.perform(post("/pauta/v1").contentType(MediaType.APPLICATION_JSON)
+				.perform(post("/v1/pauta/").contentType(MediaType.APPLICATION_JSON)
 						.content(objectMapper.writeValueAsString(pautaForm)))
 				.andExpect(status().isCreated()).andExpect(jsonPath("$.descricao", is(pauta.getDescricao())));
 	}
@@ -76,7 +76,7 @@ public class PautaControllerTest {
 
 		when(pautaService.pesquisarPautas(any(PautaForm.class), anyInt(), anyInt())).thenReturn(pautas);
 
-		this.mockMvc.perform(get("/pauta/v1/")
+		this.mockMvc.perform(get("/v1/pauta/")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(pautaForm))).andExpect(status().isOk())
 				.andExpect(jsonPath("$.content", hasSize(2)))
@@ -96,7 +96,7 @@ public class PautaControllerTest {
 
 		when(pautaService.findById(anyLong())).thenReturn(pauta);
 
-		this.mockMvc.perform(get("/pauta/v1/{id}", "1")).andExpect(status().isOk())
+		this.mockMvc.perform(get("/v1/pauta/{id}", "1")).andExpect(status().isOk())
 				.andExpect(jsonPath("$.descricao", is(pauta.getDescricao())));
 	}
 }
