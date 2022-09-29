@@ -82,7 +82,7 @@ public class SessaoControllerTest {
 
 		
 		MvcResult mvcResult = this.mockMvc
-				.perform(post("/sessao/v1").contentType(MediaType.APPLICATION_JSON)
+				.perform(post("/v1/sessao/").contentType(MediaType.APPLICATION_JSON)
 						.content(objectMapper.writeValueAsString(sessaoForm)))
 				.andExpect(status().isCreated())
 				.andExpect(jsonPath("$.dataHoraFim").value(dataHoraFim))
@@ -116,7 +116,7 @@ public class SessaoControllerTest {
 
 		when(sessaoService.pesquisarSessoes(any(SessaoFiltro.class), anyInt(), anyInt())).thenReturn(sessoes);
 
-		this.mockMvc.perform(get("/sessao/v1/")
+		this.mockMvc.perform(get("/v1/sessao/")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(new SessaoFiltro()))).andExpect(status().isOk())
 				.andExpect(jsonPath("$.content", hasSize(2)))
