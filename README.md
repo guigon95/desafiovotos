@@ -2,15 +2,16 @@
 
 Informações
 
-Para a execução da aplicação é necessário possuir docker instalado e após realzar o download do docker-compose deste repositório, 
-executar o comando abaixo:
+Para a execução da aplicação via docker, foi disponibilizado um docker-compose com as imagens necessárias.
+
+Com o docker-compose.yml em sua máquina, executar o comando abaixo:
 
 docker compose up -d
 
 Após isso será feito o download da imagem do kafka e kafkadrop, caso ainda não possua em sua máquina, 
 e o download da imagem da aplicação desafiovotos, e por fim, a execução dos containers
 
-Para realizar operações na API basta acessar http://localhost:8080
+Para realizar operações na API acesse http://localhost:8080
 
 A documentaçãa da API encontra-se no link http://localhost.com:8080/swagger-ui.html
 
